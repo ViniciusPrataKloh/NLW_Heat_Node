@@ -98,7 +98,7 @@ class AuthenticateUserService {
             process.env.JWT_SECRET,
             {
                 subject: user.id,
-                expiresIn: "1d"
+                expiresIn: "2h"
             }
         );
 
