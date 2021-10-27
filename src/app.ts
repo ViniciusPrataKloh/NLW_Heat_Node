@@ -26,12 +26,18 @@ app.use(express.json());
 
 app.use(router);
 
+/**
+ * Rota teste, para simular o redirecionamento de login com o Github
+ */
 app.get("/github", (request, response) => {
     response.redirect(
         `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`
     );
 });
 
+/**
+ * Rota teste, para simular a callback do Github no front
+ */
 app.get("/signin/callback", (request, response) => {
     const { code } = request.query;
 
